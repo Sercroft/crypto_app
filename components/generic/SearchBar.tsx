@@ -12,11 +12,10 @@ interface SearchBarProps {
 
 const SearchContainer = styled.View`
   width: 100%;
-  padding: 10px;
-  background-color: #f1f1f1;
   border-radius: 10px;
   flex-direction: row;
   align-items: center;
+  margin-top: 10px; /* Añadir px para evitar advertencias */
   elevation: 5;
 `;
 
@@ -53,16 +52,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, value, onChangeText,
     };
   });
 
+  // Filtrar caracteres numéricos y especiales
+  const handleTextChange = (text: string) => {
+    const textWithoutNumbersAndSpecialChars = text.replace(/[^a-zA-Z\s]/g, '');
+    onChangeText(textWithoutNumbersAndSpecialChars);
+  };
+
   return (
     <Animated.View style={[animatedStyle]}>
       <SearchContainer>
         <SearchInput
           placeholder={placeholder}
           value={value}
-          onChangeText={onChangeText}
+          onChangeText={handleTextChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          keyboardType={keyboardType}
+          keyboardType="default" // Establecer el teclado de texto
         />
       </SearchContainer>
     </Animated.View>

@@ -53,6 +53,7 @@ const CryptoItem = ({ crypto }: { crypto: any }) => {
               withHorizontalLabels={false}
               withInnerLines={false}
               withDots={false}
+              withOuterLines={false}
               chartConfig={{
                 backgroundGradientFromOpacity: 0,
                 backgroundGradientToOpacity: 0,
