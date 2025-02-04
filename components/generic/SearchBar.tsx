@@ -67,7 +67,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, value, onChangeText,
           onChangeText={handleTextChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          keyboardType="default" // Establecer el teclado de texto
+          keyboardType="default"
         />
       </SearchContainer>
     </Animated.View>

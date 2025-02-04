@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     marginVertical: 40,
-    alignSelf: 'center', // Center the card horizontally
+    alignSelf: 'center',
   },
   iconAndNameContainer: {
     flexDirection: 'row',
